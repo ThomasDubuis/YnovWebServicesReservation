@@ -1,0 +1,32 @@
+server:
+  port: ${PORT:8082}
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: debug
+    #    web: debug
+    com.tdubuis: debug
+
+spring:
+  sql:
+    init:
+      mode: always #For generate fakeData with data.sql file
+  application:
+    name: ReservationApp
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/reservationapp}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:password}
+  jpa:
+    open-in-view: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+    #      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: ${SHOW_SQL:true}
+  data:
+    web:
+      pageable:
+        max-page-size: 50
