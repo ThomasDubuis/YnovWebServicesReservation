@@ -1,0 +1,3 @@
+CREATE DATABASE movieapp;
+CREATE DATABASE authapp;
+CREATE DATABASE reservationapp;

@@ -6,6 +6,11 @@ logging:
     #    web: debug
     com.tdubuis: debug
 
+movie-app:
+  url: "http://localhost:8080"
+auth-app:
+  url : "http://localhost:8081"
+
 spring:
   sql:
     init:
