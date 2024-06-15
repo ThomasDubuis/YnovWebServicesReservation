@@ -112,7 +112,7 @@ public class CinemaController {
     public ResponseEntity<List<SeanceResponse>> getAllSeances(@PathVariable String cinemaUid, @PathVariable String roomUid) {
         List<Seance> seances = seanceService.getAllSeancesByRoom(cinemaUid, roomUid);
         if (seances.isEmpty()) {
-            throw new NoResultException("No Seances found");
+            throw new NoResultException("No seances found");
         }
         return ResponseEntity.ok(seances.stream().map(SeanceFactory::toSeanceResponse).toList());
     }

@@ -37,6 +37,8 @@ Cette API permet de Reserver des seance pour voir des films.
 L'application sera déployée par défaut sur `http://localhost:8082`
 
 ## Documentations
+Lors de la creation d'une demande de reservation l'utilisateur à 15 min pour accepter.
+Pour un soucis de simplicité les emails seront tous envoyer dans une queue (fake-email)
 
 ### Swagger (OpenAPI)
 

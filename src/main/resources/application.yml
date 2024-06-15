@@ -10,6 +10,12 @@ movie-app:
   url: "http://localhost:8080"
 auth-app:
   url : "http://localhost:8081"
+sqs:
+  url: "http://127.0.0.1:9324"
+  username: "XXX"
+  password: "XXX"
+  queue-name: "processing-reservation-tunnel.fifo"
+  fake-mail: "fake-mail.fifo"
 
 spring:
   sql:

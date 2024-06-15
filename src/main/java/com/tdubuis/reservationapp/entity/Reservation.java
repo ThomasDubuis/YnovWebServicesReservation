@@ -31,11 +31,17 @@ public class Reservation {
 
     private Integer seats;
 
+    private Date expiresAt;
+
     @CreatedDate
     private Date createdAt;
 
     @LastModifiedDate
     private Date updatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "seanceId", nullable = false)
+    private Seance seance;
 
     @PrePersist
     protected void onCreate() {

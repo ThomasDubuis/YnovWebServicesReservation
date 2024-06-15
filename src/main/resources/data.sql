@@ -19,9 +19,12 @@ insert into room (uid, name, cinema_id, seats, created_at, updated_at) values ('
 
 -- Salle 1 - Cezanne
 insert into seance (uid, room_id, movie, date, created_at, updated_at) values ('ecbbdd2d-3f1d-40c8-bfd0-f166c24034f8', '5fee4c75-a06a-4d4c-b65b-d3d23958cc85', '55a2e254-349a-4e8a-ab75-a9ac0d44e7e2', '2024-12-01 11:11:11.111', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');
-insert into seance (uid, room_id, movie, date, created_at, updated_at) values ('e820bdd4-0358-46af-bc11-4716ac25235e', '11630174-0c00-41fa-9867-9fb0e08ebf53', '55a2e254-349a-4e8a-ab75-a9ac0d44e7e2', '2024-12-01 15:11:11.111', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');
+insert into seance (uid, room_id, movie, date, created_at, updated_at) values ('e820bdd4-0358-46af-bc11-4716ac25235e', '5fee4c75-a06a-4d4c-b65b-d3d23958cc85', '11630174-0c00-41fa-9867-9fb0e08ebf53', '2024-12-01 15:11:11.111', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');
 insert into seance (uid, room_id, movie, date, created_at, updated_at) values ('5b9b7ca6-c3ce-46f7-a3ab-4da073c158f0', '5fee4c75-a06a-4d4c-b65b-d3d23958cc85', '55a2e254-349a-4e8a-ab75-a9ac0d44e7e2', '2024-12-01 18:11:11.111', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');
 
 -- Salle VIP - Pathe
 insert into seance (uid, room_id, movie, date, created_at, updated_at) values ('a22d78f0-3661-40e4-8d09-12b822dd63ce', '9711c3ec-09fc-4c85-8b18-b870fa9cc88f', '55a2e254-349a-4e8a-ab75-a9ac0d44e7e2', '2024-12-01 11:11:11.111', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');
 insert into seance (uid, room_id, movie, date, created_at, updated_at) values ('0936691a-c4b6-4390-8e5b-4c8b7b6487f7', '9711c3ec-09fc-4c85-8b18-b870fa9cc88f', '55a2e254-349a-4e8a-ab75-a9ac0d44e7e2', '2024-12-01 15:11:11.111', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');
+
+insert into reservation(uid, seance_id, seats, rank, status, expires_at, created_at, updated_at) values ('0da315ff-b24b-499d-808d-fc6c9607c860', 'a22d78f0-3661-40e4-8d09-12b822dd63ce', 5, 0, 'open', NOW() + interval '15 MINUTES', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');
+insert into reservation(uid, seance_id, seats, rank, status, expires_at, created_at, updated_at) values ('b1c06c95-a8f5-4afb-b3e4-84468bd1f4ad', 'a22d78f0-3661-40e4-8d09-12b822dd63ce', 3, 1, 'open', NOW() + interval '15 MINUTES', '2024-01-01 11:11:11.111', '2024-01-01 11:11:11.111');

@@ -67,4 +67,22 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         log.error(ex.getMessage());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
     }
+
+    @ExceptionHandler(NoSeatLeftException.class)
+    public ResponseEntity<Object> handleNoSeatLeftException(NoSeatLeftException ex) {
+        log.error(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(ExpiredReservationException.class)
+    public ResponseEntity<Object> handleExpiredReservationException(ExpiredReservationException ex) {
+        log.error(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.GONE).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(AlreadyConfirmedException.class)
+    public ResponseEntity<Object> handleAlreadyConfirmedException(AlreadyConfirmedException ex) {
+        log.error(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CREATED).body(ex.getMessage());
+    }
 }

@@ -12,6 +12,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -29,15 +30,18 @@ public class Seance {
 
     private Date date;
 
-    @ManyToOne
-    @JoinColumn(name = "roomId", nullable = false)
-    private Room room;
-
     @CreatedDate
     private Date createdAt;
 
     @LastModifiedDate
     private Date updatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "roomId", nullable = false)
+    private Room room;
+
+    @OneToMany(mappedBy = "seance")
+    private List<Reservation> reservations;
 
     public void updateIfNotNull(SeanceRequest seanceRequest) {
         if (seanceRequest.getMovie() != null && !seanceRequest.getMovie().isBlank()) {

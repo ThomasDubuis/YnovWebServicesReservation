@@ -16,6 +16,8 @@ public class ReservationResponse {
 
     private Status status;
 
+    private Date expiresAt;
+
     private Date createdAt;
 
     private Date updatedAt;
