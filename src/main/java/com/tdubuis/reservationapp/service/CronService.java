@@ -29,10 +29,11 @@ public class CronService {
 
     @Scheduled(fixedRate = 30000) //30 sec delay
     public void checkIfReservationExpired() {
-        log.debug("Cron for set expiredReservation running");
+        log.debug("Begin : Cron for set expiredReservation");
         List<Reservation> reservationExpired = reservationRepository.findAllByExpiresAtIsBeforeAndStatus(Date.from(Instant.now()), Status.open);
         reservationExpired.forEach(reservation -> reservation.setStatus(Status.expired));
         reservationRepository.saveAll(reservationExpired);
+        log.debug("End : Cron for set expiredReservation");
     }
 
     @Scheduled(fixedRate = 5000) // 5 sec delay

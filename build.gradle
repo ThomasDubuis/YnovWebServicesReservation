@@ -11,6 +11,10 @@ java {
     sourceCompatibility = '17'
 }
 
+bootRun {
+    mainClass = 'com.tdubuis.movieapp.ReservationAppApplication'
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
